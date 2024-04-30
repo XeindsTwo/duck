@@ -1,0 +1,15 @@
+@include('components/_head.html', {
+title: '$DUCK Coin'
+})
+
+<main>
+  @include('components/_header.html')
+  @include('home/_home.html')
+  <div class="bg">
+    @include('home/_about.html')
+    @include('home/_roadmap.html')
+  </div>
+  @include('home/_ecosystem.html')
+</main>
+@include('components/_footer.html')
+<script src="js/main.min.js" type="module"></script>

@@ -1,0 +1,163 @@
+.home {
+  position: relative;
+  margin-top: 32px;
+  margin-bottom: 170px;
+
+  &__top {
+    position: relative;
+  }
+
+  &__title {
+    font-family: $heading;
+    @include flex-between(30);
+    margin-bottom: 24px;
+    font-size: 172px;
+    line-height: .9;
+    letter-spacing: -1.72px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $black50;
+    position: relative;
+    z-index: 0;
+    transform: translateY(17px);
+  }
+
+  &__content {
+    @include flex-column(30);
+    justify-content: space-between;
+    max-width: 380px;
+    min-height: 460px;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 1.3;
+    font-weight: 500;
+    margin-bottom: 16px;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__since {
+    font-size: 12px;
+    color: rgba($black, .45);
+    font-weight: 500;
+  }
+
+  &__info {
+    @include flex-column(24);
+  }
+
+  &__item {
+    @include flex-column(2);
+    position: relative;
+
+    p {
+      color: rgba($black, .4);
+      font-size: 12px;
+    }
+  }
+
+  &__subname {
+    color: $black;
+    @include flex-align-center(5);
+  }
+
+  &__contract {
+    max-width: max-content;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: color .4s, border .4s;
+
+    &:hover {
+      color: $blue150;
+
+      svg g {
+        opacity: 1;
+
+        path {
+          fill: $blue150;
+        }
+      }
+    }
+
+    &:focus {
+      border-color: $blue150;
+    }
+  }
+
+  &__tooltip {
+    position: absolute;
+    left: 97px;
+    top: -27px;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    font-size: 12px;
+    padding: 3px 8px;
+    max-width: max-content;
+    color: $white;
+    border-radius: 26px;
+    background-color: $blue150;
+    transition: opacity .4s;
+
+    &.visible {
+      opacity: 1;
+      pointer-events: auto;
+      user-select: auto;
+    }
+  }
+
+  &__img {
+    @include objectCoverBg;
+    user-select: none;
+    position: absolute;
+    z-index: 8;
+    top: -11.5%;
+    right: 3.5%;
+    transition: transform 1s ease-in-out;
+    //transform: translateY(200%);
+  }
+
+  &__links {
+    @include flex-align-center(16);
+    position: absolute;
+    right: 0;
+    z-index: 10;
+  }
+
+  &__link {
+    padding: 15px 28px;
+    align-self: stretch;
+
+    &.tonviewer {
+      background-color: transparent;
+      border-color: $white100;
+      color: $black;
+
+      &:hover {
+        border-color: $blue150;
+        color: $blue150;
+      }
+
+      &:focus {
+        background-color: rgba($blue150, .1);
+        color: $black;
+      }
+    }
+  }
+
+  &__buy {
+    padding: 18px 40px;
+
+    &:focus {
+      background-color: rgba($blue150, .1);
+      border-color: $blue150;
+      color: $black;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.top {
+  @include flex-column(24);
+  justify-content: center;
+  align-items: center;
+  max-width: 472px;
+  margin: 0 auto 48px;
+  text-align: center;
+
+  &--long {
+    max-width: 548px;
+    margin: 0 auto 96px;
+
+    p {
+      max-width: 472px;
+    }
+  }
+}

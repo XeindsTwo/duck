@@ -1,0 +1,41 @@
+.header {
+  padding: 8px 0;
+  position: relative;
+  z-index: 30;
+
+  &__inner {
+    @include flex-between(30);
+    align-items: center;
+  }
+
+  &__logo, &__right {
+    max-width: 126px;
+    width: 100%;
+  }
+
+  &__list {
+    @include flex-align-center(24);
+  }
+
+  &__link {
+    font-family: $mono;
+    color: rgba($black, .4);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: color .4s, border .4s;
+
+    &.active {
+      color: $black;
+      pointer-events: none;
+    }
+
+    &:hover {
+      color: $black;
+    }
+
+    &:focus {
+      color: $blue150;
+      border-bottom-color: $blue150;
+    }
+  }
+}
