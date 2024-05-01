@@ -5,6 +5,20 @@
   max-width: 472px;
   margin: 0 auto 48px;
   text-align: center;
+  @include r($desktop) {
+    max-width: 450px;
+  }
+  @include r($lg) {
+    max-width: 430px;
+    margin-bottom: 40px;
+  }
+  @include r($tablet) {
+    max-width: 410px;
+    margin-bottom: 32px;
+  }
+  @include r($sm) {
+    max-width: 370px;
+  }
 
   &--long {
     max-width: 548px;

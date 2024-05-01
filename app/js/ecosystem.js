@@ -24,7 +24,7 @@ export function ecosystem() {
       isClickable = false;
       setTimeout(function () {
         isClickable = true;
-      }, 700);
+      }, 1100);
 
       toggleItems.forEach(function (el) {
         el.classList.remove("active");

@@ -6,7 +6,7 @@ export function links() {
   const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.3
+    threshold: 0.8
   };
 
   const observer = new IntersectionObserver((entries) => {

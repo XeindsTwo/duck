@@ -206,6 +206,13 @@
     <div class="top">
       <h2 class="title-section">Just like a healthy pond ecosystem, $DUCK thrives</h2>
     </div>
+    <div class="ecosystem__volume mobile">
+      <h3 class="ecosystem__subtitle">
+        <span>Total supply:</span>
+        1 200,000,000 $DUCK
+      </h3>
+      <img class="ecosystem__duck" src="images/duck-volume.png" width="96" height="96" alt="duck decor">
+    </div>
     <div class="ecosystem__inner">
       <ul class="ecosystem__content">
         <li class="ecosystem__content-item active short">
@@ -284,6 +291,9 @@
             <path opacity="0.16" d="M1.5 0L659 5.74805e-05C670.322 5.84703e-05 679.5 9.1782 679.5 20.5V20.5"
                   stroke="black" stroke-width="2" stroke-linecap="round" stroke-dasharray="12 12"/>
           </svg>
+          <svg class="ecosystem__statistics-line mobile" xmlns="http://www.w3.org/2000/svg" width="243" height="26" viewBox="0 0 243 26" fill="none">
+            <path opacity="0.16" d="M1.98346 1L217.983 1.00002C231.238 1.00002 241.983 11.7452 241.983 25V25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-dasharray="12 12"/>
+          </svg>
           <span>100%</span>
         </div>
         <div class="ecosystem__statistics-inner">
@@ -331,20 +341,6 @@
     </div>
   </div>
 </section>
-
-<script>
-  const html = document.documentElement;
-  const menuBtn = document.querySelector('.menu-btn');
-  const header = document.querySelector('.header__mobile');
-
-  menuBtn.addEventListener('click', (event) => {
-    event.preventDefault();
-    html.classList.toggle('active');
-    header.classList.toggle('active');
-    menuBtn.classList.toggle('active');
-    menuBtn.blur();
-  });
-</script>
 
   </main>
   <footer class="footer indent section end" id="6">

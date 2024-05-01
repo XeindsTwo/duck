@@ -3,6 +3,7 @@
   position: fixed;
   width: 100%;
   z-index: 30;
+  background-color: $white;
 
   &__inner {
     @include flex-between(30);
@@ -16,6 +17,7 @@
 
   &__list {
     @include flex-align-center(24);
+    display: none;
   }
 
   &__link {
