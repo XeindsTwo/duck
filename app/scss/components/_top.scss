@@ -23,6 +23,24 @@
   &--long {
     max-width: 548px;
     margin: 0 auto 96px;
+    @include r($desktop) {
+      margin-bottom: 80px;
+      max-width: 530px;
+    }
+    @include r($lg) {
+      margin-bottom: 60px;
+      max-width: 480px;
+    }
+    @include r($tablet) {
+      max-width: 450px;
+    }
+    @include r($sm) {
+      margin-bottom: 50px;
+      max-width: 430px;
+    }
+    @include r($phone) {
+      max-width: 400px;
+    }
 
     p {
       max-width: 472px;

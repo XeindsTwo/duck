@@ -70,10 +70,31 @@
   border-radius: 24px;
   background-color: $white200;
   overflow: hidden;
+  @include r($desktop) {
+    padding-top: 100px;
+  }
+  @include r($lg) {
+    padding-top: 90px;
+  }
+  @include r($tablet) {
+    padding-top: 80px;
+  }
+  @include r($sm) {
+    padding-top: 70px;
+  }
+  @include r($phone) {
+    padding-top: 60px;
+  }
 }
 
 .indent {
   margin-top: 116px;
+  @include r($desktop) {
+    margin-top: 100px;
+  }
+  @include r($lg) {
+    margin-top: 90px;
+  }
 }
 
 .sr-only {
