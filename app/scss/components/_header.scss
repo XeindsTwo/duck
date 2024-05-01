@@ -17,7 +17,6 @@
 
   &__list {
     @include flex-align-center(24);
-    display: none;
   }
 
   &__link {
