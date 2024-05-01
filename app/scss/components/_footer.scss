@@ -1,3 +1,160 @@
 .footer {
+  padding-bottom: 30px;
 
+  &__title {
+    font-family: $heading;
+    @include flex-between(30);
+    align-items: center;
+    margin-bottom: 290px;
+    font-size: 172px;
+    line-height: .9;
+    letter-spacing: -1.72px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $black50;
+    position: relative;
+
+    img {
+      @include objectCoverBg;
+      position: absolute;
+      right: 27%;
+    }
+
+    span {
+      position: relative;
+      z-index: 10;
+    }
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  &__link, &__cta {
+    box-shadow: 0 2px 24px 0 rgba(114, 138, 150, 0.12);
+    border: 1px solid $white100;
+    border-radius: 24px;
+    background-color: $white;
+  }
+
+  &__link {
+    padding: 25.5px 24px;
+    justify-content: flex-start;
+    align-items: center;
+    color: $black;
+    background-color: $white;
+    max-width: 100%;
+    font-family: $inter;
+    text-transform: none;
+    font-weight: 500;
+
+    span {
+      color: $blue150;
+      transition: color .4s;
+    }
+
+    &.telegram {
+      &:focus {
+        background-color: $blue150;
+        border-color: transparent;
+        color: $white;
+
+        span {
+          color: $white;
+        }
+
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+
+    &.twitter {
+      &:hover {
+        background-color: transparent;
+        color: $blue150;
+        border-color: $blue150;
+
+        svg path {
+          fill: $blue150;
+        }
+      }
+
+      &:focus {
+        background-color: $blue150;
+        border-color: transparent;
+        color: $white;
+
+        svg path {
+          fill: $white;
+        }
+      }
+
+      svg {
+        transform: translateY(-1px);
+      }
+    }
+
+    &.dyor {
+      &:focus {
+        background-color: $blue150;
+        border-color: transparent;
+        color: $white;
+
+        .fill-one {
+          fill: $white;
+        }
+
+        .fill-two {
+          fill: $blue;
+        }
+      }
+    }
+
+    &.dedust {
+      &:hover {
+        border-color: #FC9800;
+        color: #FC9800;
+      }
+
+      &:focus {
+        background-color: #ffc12b;
+        border-color: transparent;
+        color: $black;
+      }
+    }
+  }
+
+  &__cta {
+    @include flex-between(30);
+    align-items: center;
+    padding: 24px;
+  }
+
+  &__text {
+    font-family: $heading;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: .9;
+    letter-spacing: -0.4px;
+    text-transform: uppercase;
+    color: rgba($black50, .4);
+
+    span {
+      color: $black;
+    }
+  }
+
+  &__btn {
+    padding: 18px 40px;
+
+    &:focus {
+      background-color: rgba($blue150, .2);
+      border-color: transparent;
+      color: $black;
+    }
+  }
 }

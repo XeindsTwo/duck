@@ -1,0 +1,22 @@
+.explore {
+  position: relative;
+  overflow: hidden;
+
+  &__img {
+    top: 20%;
+    right: 30%;
+    position: absolute;
+    z-index: 30;
+    //animation: transform 9s infinite;
+  }
+}
+
+@keyframes transform {
+  0% {
+    top: 20%;
+  }
+
+  100% {
+    top: -170%;
+  }
+}

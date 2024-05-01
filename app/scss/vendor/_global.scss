@@ -36,6 +36,23 @@
   }
 }
 
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.end {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
 .bg {
   padding-top: 116px;
   border-radius: 24px;
