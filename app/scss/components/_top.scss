@@ -22,6 +22,7 @@
 
   &--long {
     max-width: 548px;
+    width: 100%;
     margin: 0 auto 96px;
     @include r($desktop) {
       margin-bottom: 80px;

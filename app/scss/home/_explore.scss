@@ -1,22 +1,30 @@
 .explore {
   position: relative;
   overflow: hidden;
+  @media (max-width: 1100px) {
+    margin-top: 60px;
+    height: 90vh;
+  }
+  @include r($tablet) {
+    height: 84vh;
+  }
+
+  .top {
+    position: absolute;
+    @include topLeft50;
+  }
 
   &__img {
     top: 20%;
-    right: 30%;
-    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(210px);
+    position: relative;
     z-index: 30;
-    //animation: transform 9s infinite;
-  }
-}
-
-@keyframes transform {
-  0% {
-    top: 20%;
-  }
-
-  100% {
-    top: -170%;
+    @media (max-width: 1100px) {
+      transform: translateX(-50%) translateY(0);
+    }
+    @include r($sm) {
+      transform: translateX(-50%) translateY(0) scale(0.8);
+    }
   }
 }

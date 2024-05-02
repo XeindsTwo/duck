@@ -3,15 +3,15 @@
   @include r($desktop) {
     padding-bottom: 80px;
   }
-  @include r($lg) {
-    padding-top: 100px;
+  @media (max-width: 1100px) {
+    margin-top: 90px;
   }
   @include r($sm) {
-    padding-top: 80px;
+    margin-top: 80px;
     padding-bottom: 70px;
   }
   @include r($phone) {
-    padding-top: 70px;
+    margin-top: 70px;
     padding-bottom: 50px;
   }
 
