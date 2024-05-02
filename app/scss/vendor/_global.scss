@@ -1,7 +1,4 @@
 .html {
-  position: relative;
-  scroll-behavior: smooth;
-
   &.active {
     overflow: hidden;
   }
@@ -16,7 +13,6 @@
   background-color: $white;
   position: relative;
   overflow-x: hidden;
-  will-change: contents;
 }
 
 .container {
@@ -46,9 +42,18 @@
   &--rel {
     position: relative;
   }
+
+  &.flex {
+    @media (max-width: 690px) {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+  }
 }
 
-/*.section {
+.section {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -63,10 +68,10 @@
 .end {
   justify-content: flex-end;
   align-items: flex-end;
-}*/
+}
 
 .bg {
-  padding-top: 116px;
+  padding-top: 30px;
   border-radius: 24px;
   background-color: $white200;
   overflow: hidden;

@@ -44,7 +44,7 @@
         </ul>
       </nav>
       <div class="header__right">
-        <a class="header__btn btn gray" href="https://dedust.io/swap/ton/duck" target="_blank">
+        <a class="btn gray" href="https://dedust.io/swap/ton/duck" target="_blank">
           Buy token
         </a>
       </div>
@@ -55,9 +55,10 @@
     </div>
   </div>
 </header>
-<main>
-  <section class="home section start" id="1">
-  <div class="container container--rel flex">
+<div id="container" data-scroll-container>
+  <main>
+    <section class="home section start" id="1">
+  <div class="container container--rel">
     <div class="home__top">
       <h1 class="home__title">
         <span>memecoin</span>
@@ -98,9 +99,7 @@
         </div>
       </div>
     </div>
-    <div class="duck">
-      <img class="home__img" src="images/duck.png" alt="duck coin">
-    </div>
+    <img class="home__img" src="images/duck.png" alt="duck coin">
     <div class="home__links">
       <a class="home__link tonviewer btn"
          href="https://tonviewer.com/EQBTcytZjdZwFLj6TO7CeGvn4aMmqXvbX-nODiApbd011gT3"
@@ -115,8 +114,8 @@
     </div>
   </div>
 </section>
-  <div class="bg">
-    <section class="about section" id="2">
+    <div class="bg">
+      <section class="about section" id="2">
   <div class="container">
     <div class="top">
       <h2 class="title-section">What is Duck?</h2>
@@ -175,7 +174,7 @@
     </ul>
   </div>
 </section>
-    <section class="roadmap section" id="3">
+      <section class="roadmap section" id="3">
   <div class="container">
     <div class="roadmap__inner">
       <div class="top top--long">
@@ -203,8 +202,8 @@
     </div>
   </div>
 </section>
-  </div>
-  <section class="ecosystem section" id="4">
+    </div>
+    <section class="ecosystem indent section" id="4">
   <div class="container">
     <div class="top">
       <h2 class="title-section">Just like a healthy pond ecosystem, $DUCK thrives</h2>
@@ -344,9 +343,9 @@
     </div>
   </div>
 </section>
-  
-</main>
-<footer class="footer indent section end" id="6">
+
+  </main>
+  <footer class="footer indent section end" id="6">
   <div class="container">
     <h2 class="footer__title">
       <span>memecoin</span>
@@ -512,15 +511,25 @@
   </div>
 </footer>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"
-        integrity="sha512-1PKqXBz2ju2JcAerHKL0ldg0PT/1vr3LghYAtc59+9xy8e19QEtaNUyt1gprouyWnpOPqNJjL4gXMRMEpHYyLQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/main.min.js" type="module"></script>
-<script src="js/gsap.js"></script>
-<script src="js/smooth-scroll.js"></script>
+<script src="js/main.js" type="module"></script>
+<!--
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $.scrollify({
+      section: ".section",
+      scrollSpeed: 400,
+      easing: "linear",
+      touchScroll: false,
+      updateHash: false,
+      setHeights: true
+    });
+    $("#a1, #a2, #a3, #a4, #a5, #a6").click(function (e) {
+      e.preventDefault();
+      const targetSection = $(this).attr("href");
+      $.scrollify.move(targetSection);
+      $(this).blur();
+    });
+  });
+</script>-->

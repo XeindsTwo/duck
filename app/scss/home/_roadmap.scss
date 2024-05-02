@@ -1,5 +1,4 @@
 .roadmap {
-  padding: 116px 0 92px;
   position: relative;
   @include r($desktop) {
     padding-bottom: 80px;
@@ -76,7 +75,7 @@
       }
 
       .roadmap__img {
-        transform: scale(1.4) translateY(3px);
+        transform: scale(1.5) translateY(3px);
       }
     }
   }
@@ -103,7 +102,7 @@
     top: 7px;
     z-index: 2;
     transform: scale(1.25);
-    transition: transform .4s;
+    transition: transform 1.5s;
     @include r($tablet) {
       top: -13px;
     }

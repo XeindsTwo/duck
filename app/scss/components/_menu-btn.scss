@@ -10,29 +10,29 @@
   border-radius: 50%;
   padding: 18px 15px;
   transition: all .4s;
-  background-color: $white;
+  background-color: $white50;
   border: 1px solid transparent;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .05);
 
   &:hover {
-    background-color: $blue;
-  }
-
-  &:focus {
-    background-color: transparent;
-    border-color: $blue;
+    background-color: $blue150;
 
     .menu-btn__line, .menu-btn__line::after, .menu-btn__line::before {
       background-color: $white;
     }
   }
 
-  &--header {
-    @media (max-width: 945px) {
-      display: flex;
+  &:focus {
+    background-color: rgba($blue150, .1);
+    border-color: $blue150;
+
+    .menu-btn__line, .menu-btn__line::after, .menu-btn__line::before {
+      background-color: $black;
     }
-    @media (max-width: 595px) {
-      margin-left: auto;
+  }
+
+  &--header {
+    @media (max-width: 1095px) {
+      display: flex;
     }
   }
 
@@ -68,7 +68,7 @@
 
   &.active {
     background-color: transparent;
-    border-color: $blue;
+    border-color: $blue150;
 
     .menu-btn__line {
       background: transparent;

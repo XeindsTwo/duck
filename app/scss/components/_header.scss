@@ -1,18 +1,42 @@
 .header {
   padding: 8px 0;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 30;
-  background-color: $white;
+  transition: all .4s ease-in-out;
+  @media (max-width: 1095px) {
+    padding: 10px 0;
+  }
+
+  &.white {
+    background-color: $white;
+  }
 
   &__inner {
     @include flex-between(30);
     align-items: center;
+    @include r($sm) {
+      gap: 25px;
+    }
+    @include r($phone) {
+      gap: 16px;
+    }
   }
 
   &__logo, &__right {
     max-width: 126px;
     width: 100%;
+    @media (max-width: 1095px) {
+      max-width: max-content;
+      width: auto;
+    }
+  }
+
+  &__nav {
+    @media (max-width: 1095px) {
+      display: none;
+    }
   }
 
   &__list {
@@ -38,6 +62,22 @@
     &:focus {
       color: $blue150;
       border-bottom-color: $blue150;
+    }
+  }
+
+  &__right {
+    @media (max-width: 1095px) {
+      margin-left: auto;
+      align-self: stretch;
+      a {
+        height: 100%;
+      }
+    }
+  }
+
+  .btn.gray {
+    @include r($phone) {
+      padding: 12px 20px;
     }
   }
 }
