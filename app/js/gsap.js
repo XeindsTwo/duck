@@ -58,23 +58,15 @@ ScrollTrigger.create({
   }
 });
 
-const exploreSection = document.querySelector('.explore');
-const exploreImg = document.querySelector('.explore__img');
-const initialY = window.innerWidth < 1100 ? 800 : 1100;
-gsap.set(exploreImg, {y: initialY});
-
-ScrollTrigger.create({
-  trigger: exploreSection,
-  start: 'top 80%',
-  onEnter: () => {
-    gsap.to(exploreImg, {
-      duration: 11.7,
-      opacity: 1,
-      y: -810,
-      delay: 0.2,
-      ease: "power1.inOut",
-    });
-  }
+gsap.to('.explore__img', {
+  scrollTrigger: {
+    trigger: ".explore",
+    start: "top bottom-=500",
+    endTrigger: ".footer",
+    end: "bottom bottom",
+    scrub: true
+  },
+  y: -810
 });
 
 const sections = document.querySelectorAll(".section");
@@ -105,7 +97,7 @@ function goToSection(section) {
     gsap.to(window, {
       scrollTo: {y: section, autoKill: false},
       onComplete: scrolling.enable,
-      duration: 1.2
+      duration: 1.7
     });
   }
 }
