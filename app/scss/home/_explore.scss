@@ -33,6 +33,10 @@
     }
     @media (max-width: 520px) {
       transform: translateX(-50%) translateY(0);
+      width: 260px;
+    }
+    @include r($phone) {
+      width: 250px;
     }
   }
 }

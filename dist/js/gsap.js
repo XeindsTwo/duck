@@ -3,28 +3,15 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const timeline = gsap.timeline();
 
 const homeSection = document.querySelector('.home');
-const duckImage = document.querySelector('.home__img');
+const duckImage = document.querySelector('.duck');
 
-gsap.set(duckImage, {opacity: 0, scale: 0, y: 1800});
+gsap.set(duckImage, {opacity: 0});
 
 ScrollTrigger.create({
   trigger: homeSection,
   start: 'top 80%',
   onEnter: () => {
-    gsap.to(duckImage, {
-      duration: 1,
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      delay: 0.5,
-      onComplete: () => {
-        gsap.to(duckImage, {
-          duration: 0.1, scale: 1.05, yoyo: true, repeat: 1, onComplete: () => {
-            gsap.to(duckImage, {duration: 0.1, scale: 1});
-          }
-        });
-      }
-    });
+    gsap.to(duckImage, {duration: 0.7, opacity: 1, delay: 1});
   }
 });
 

@@ -1,7 +1,5 @@
-
-
 window.addEventListener('load', function () {
-  const menuLinks = document.querySelectorAll('.desktop');
+  const menuLinks = document.querySelectorAll('.header__link');
 
   menuLinks.forEach(function (menuLink) {
     menuLink.addEventListener('click', function (event) {
@@ -9,8 +7,7 @@ window.addEventListener('load', function () {
 
       const targetId = menuLink.getAttribute('href').slice(1);
       const targetElement = document.getElementById(targetId);
-      const headerHeight = document.querySelector('.header').offsetHeight; // Получаем высоту хедера
-      const targetOffset = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight; // Рассчитываем точное положение цели с учетом высоты хедера
+      const targetOffset = targetElement.offsetTop - document.querySelector('.header').offsetHeight;
 
       gsap.to(window, {
         scrollTo: {y: targetOffset, autoKill: false},

@@ -281,7 +281,7 @@
     z-index: 8;
     top: -13.6%;
     right: 3.5%;
-    transition: transform 1s ease-in-out;
+    transition: transform .8s ease-in-out, scale .6s ease-in-out;
     @media (max-width: 1440px) {
       right: 3%;
     }
