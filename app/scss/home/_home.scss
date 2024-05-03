@@ -11,8 +11,7 @@
     margin-bottom: 140px;
   }
   @media (max-width: 870px) {
-    margin-top: -60px;
-    padding-top: 150px;
+    padding-top: 100px;
     margin-bottom: 120px;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -21,11 +20,14 @@
     margin-bottom: 100px;
   }
   @media (max-width: 690px) {
-    padding-top: 110px;
+    padding-top: 60px;
     margin-bottom: 90px;
   }
   @include r($sm) {
     margin-bottom: 80px;
+  }
+  @media (max-width: 530px) {
+    padding-top: 70px;
   }
 
   &__top {

@@ -42,8 +42,9 @@ function scrollToTarget(targetId) {
     headerNav.classList.remove('active');
     menuBtn.classList.remove('active');
     setTimeout(() => {
-      const targetOffset = targetSection.offsetTop - 85;
-      window.scrollTo({top: targetOffset, behavior: 'smooth'});
+      const headerHeight = document.querySelector('.header').offsetHeight; // Получаем высоту хедера
+      const targetOffset = targetSection.offsetTop - headerHeight + 10; // Добавляем 10 пикселей к высоте хедера
+      window.scrollTo({ top: targetOffset, behavior: 'smooth' });
     }, 400);
   }
 }

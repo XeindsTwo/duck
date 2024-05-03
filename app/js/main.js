@@ -42,7 +42,7 @@ function scrollToTarget(targetId) {
     headerNav.classList.remove('active');
     menuBtn.classList.remove('active');
     setTimeout(() => {
-      const targetOffset = targetSection.offsetTop - 85;
+      const targetOffset = targetSection.offsetTop - 80;
       window.scrollTo({top: targetOffset, behavior: 'smooth'});
     }, 400);
   }
