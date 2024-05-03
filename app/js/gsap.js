@@ -104,23 +104,82 @@ const scrolling = {
   }
 };
 
+let isScrollingAnimation = false;
+
 function goToSection(section) {
   if (scrolling.enabled && window.innerWidth >= 1100) {
     scrolling.disable();
+    isScrollingAnimation = true;
     gsap.to(window, {
       scrollTo: {y: section, autoKill: false},
-      onComplete: scrolling.enable,
+      onComplete: () => {
+        isScrollingAnimation = false;
+        scrolling.enable();
+      },
       duration: 1.7
     });
   }
 }
 
-sections.forEach((section, i) => {
+sections.forEach((section) => {
   ScrollTrigger.create({
     trigger: section,
     start: "top bottom-=1",
     end: "bottom top+=1",
     onEnter: () => goToSection(section.offsetTop),
     onEnterBack: () => goToSection(section.offsetTop)
+  });
+});
+
+const menuLinks = document.querySelectorAll('.desktop');
+let lastClickTimestamp = 0;
+const clickDelay = 2000;
+
+menuLinks.forEach(function (menuLink) {
+  menuLink.addEventListener('click', function (event) {
+    const currentTimestamp = Date.now();
+    if (currentTimestamp - lastClickTimestamp < clickDelay || isScrollingAnimation) {
+      return;
+    }
+    lastClickTimestamp = currentTimestamp;
+
+    menuLink.blur();
+    event.preventDefault();
+
+    const targetId = menuLink.getAttribute('href').slice(1);
+    const targetElement = document.getElementById(targetId);
+    const headerHeight = document.querySelector('.header').offsetHeight;
+    let targetOffset;
+
+    if (targetId === "community") {
+      const targetRect = targetElement.getBoundingClientRect();
+      const sectionBottom = targetRect.top + targetRect.height + window.scrollY;
+      const windowHeight = window.innerHeight;
+      targetOffset = sectionBottom - windowHeight + 1;
+    } else {
+      targetOffset = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
+    }
+
+    scrolling.disable();
+    gsap.to(window, {
+      scrollTo: {y: targetOffset, autoKill: false},
+      onComplete: () => {
+        ScrollTrigger.refresh();
+        scrolling.enable();
+
+        const handleWheel = (e) => {
+          if (e.deltaY < 0) {
+            scrolling.disable();
+            scrolling.enable();
+            window.removeEventListener('wheel', handleWheel);
+            goToSection(window.scrollY - window.innerHeight); // Переход к предыдущей секции, если скролл вверх
+          }
+        };
+
+        window.addEventListener('wheel', handleWheel);
+      },
+      duration: 2,
+      ease: 'power4.inOut'
+    });
   });
 });
