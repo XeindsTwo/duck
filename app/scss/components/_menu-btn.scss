@@ -79,14 +79,14 @@
         margin-top: 0;
         transform: rotate(-45deg);
         transition-delay: .4s;
-        background-color: $white;
+        background-color: $blue150;
       }
 
       &::after {
         margin-top: 0;
         transform: rotate(45deg);
         transition-delay: .4s;
-        background-color: $white;
+        background-color: $blue150;
       }
     }
   }
